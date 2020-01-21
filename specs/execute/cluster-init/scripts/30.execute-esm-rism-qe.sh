@@ -83,7 +83,7 @@ if [[ ! -f ${HOMEDIR}/apps/${QE_DL_VER%%.*}/bin/pw.x ]]; then
    make all
 fi
 CMD2=$(grep ${QE_DL_VER%%.*} ${HOMEDIR}/.bashrc | head -1) | exit 0
-if [[ -z ${CMD2} ]]; then
+if [[ -n ${CMD2} ]]; then
    (echo "export PATH=${HOMEDIR}/apps/${QE_DL_VER%%.*}/bin:$PATH") >> ${HOMEDIR}/.bashrc
 fi
 set -u
