@@ -1,4 +1,4 @@
-# Azure CycleCloud template for Siemens QuantumESPRESSO
+# Azure CycleCloud template for QuantumESPRESSO
 
 ## Prerequisites
 
