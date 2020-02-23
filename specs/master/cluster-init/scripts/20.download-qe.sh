@@ -24,7 +24,7 @@ if [[ -z $CUSER ]]; then
 fi
 echo ${CUSER} > /mnt/exports/shared/CUSER
 HOMEDIR=/shared/home/${CUSER}
-CYCLECLOUD_SPEC_PATH=/mnt/cluster-init/QCMD/execute
+CYCLECLOUD_SPEC_PATH=/mnt/cluster-init/QuantumESPRESSO/master
 
 # get Quantum ESPRESSO version
 QE_VERSION=$(jetpack config QE_VERSION)

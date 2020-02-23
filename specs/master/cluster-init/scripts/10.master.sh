@@ -23,7 +23,7 @@ if [[ -z $CUSER ]]; then
 fi
 echo ${CUSER} > /mnt/exports/shared/CUSER
 HOMEDIR=/shared/home/${CUSER}
-CYCLECLOUD_SPEC_PATH=/mnt/cluster-init/QCMD/master
+CYCLECLOUD_SPEC_PATH=/mnt/cluster-init/QuntumESPRESSO/master
 
 # get Quantum ESPRESSO version
 QE_VERSION=$(jetpack config QE_VERSION)
@@ -46,7 +46,7 @@ yum install -y htop
 
 # file settings
 chown -R ${CUSER}:${CUSER} ${HOMEDIR}/apps 
-cp /opt/cycle/jetpack/logs/cluster-init/QCMD/master/scripts/10.master.sh.out ${HOMEDIR}/ 
+cp /opt/cycle/jetpack/logs/cluster-init/QuntumESPRESSO/master/scripts/10.master.sh.out ${HOMEDIR}/ 
 chown ${CUSER}:${CUSER} ${HOMEDIR}/10.master.sh.out
 
 #clean up
