@@ -19,7 +19,7 @@ Autoscale = $Autoscale
     KeyPairLocation = ~/.ssh/cyclecloud.pem
 #    KeyPairLocation = ~/examples/id_rsaccuser 
    
-        [[[cluster-init QuantumESPRESSO:default:1.0.0]]]
+        [[[cluster-init QuantumESPRESSO:default:1.0.1]]]
         Optional = True
 
         [[[configuration]]]
@@ -36,7 +36,7 @@ Autoscale = $Autoscale
 
         [[[configuration]]]
 
-        [[[cluster-init QuantumESPRESSO:master:1.0.0]]]
+        [[[cluster-init QuantumESPRESSO:master:1.0.1]]]
         Optional = True
 
         [[[network-interface eth0]]]
@@ -81,7 +81,7 @@ Autoscale = $Autoscale
 
         [[[configuration]]]
 
-        [[[cluster-init QuantumESPRESSO:execute:1.0.0]]]
+        [[[cluster-init QuantumESPRESSO:execute:1.0.1]]]
         Optional = True
 
         [[[network-interface eth0]]]
@@ -105,7 +105,7 @@ Autoscale = $Autoscale
 
         [[[configuration]]]
 
-        [[[cluster-init QuantumESPRESSO:viz:1.0.0]]]
+        [[[cluster-init QuantumESPRESSO:viz:1.0.1]]]
         Optional = True
 
         [[[network-interface eth0]]]
@@ -125,7 +125,7 @@ Autoscale = $Autoscale
 
         [[[configuration]]]
 
-        [[[cluster-init QuantumESPRESSO:viz:1.0.0]]]
+        [[[cluster-init QuantumESPRESSO:viz:1.0.1]]]
         Optional = True
 
         [[[network-interface eth0]]]
@@ -167,7 +167,7 @@ Order = 1
         ParameterType = Cloud.MachineType
         DefaultValue = Standard_HC44rs
         Config.Multiselect = true
-#        Config.Filter := Package in {"Standard_H16r", "Standard_H16r_Promo", "Standard_HB60rs", "Standard_HC44rs"}
+        Config.Filter := Package in {"Standard_H16r", "Standard_H16r_Promo", "Standard_HB60rs", "Standard_HC44rs"}
         config.plugin = pico.control.AutoCompleteDropdown
             [[[[list Config.Entries]]]]
             Name = Standard_H16r
@@ -188,9 +188,11 @@ Order = 1
             Name = Standard_HB60rs
             Label = Standard_HB60rs
             [[[[list Config.Entries]]]]
-            Name = Standard_HB60rs_v2
-            Label = Standard_HB60rs_v2
-
+            Name = Standard_HB120rs_v2
+            Label = Standard_HB120rs_v2
+            [[[[list Config.Entries]]]]
+            Name = Standard_H8
+            Label = Standard_H8
 
     [[parameters Auto-Scaling]]
     Description = "The cluster can autoscale to the workload, adding execute hosts as jobs are queued. To enable this check the box below and choose the initial and maximum core counts for the cluster"
@@ -212,7 +214,7 @@ Order = 1
 
         [[[parameter UseLowPrio]]]
         Label = Low Priority
-        DefaultValue = true
+        DefaultValue = flase
         Widget.Plugin = pico.form.BooleanCheckBox
         Widget.Label = Use low priority instances for execute hosts
 

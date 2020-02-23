@@ -31,6 +31,10 @@ QE_VERSION=$(jetpack config QE_VERSION)
 QE_DL_URL=https://github.com/QEF/q-e/releases/download/qe-${QE_VERSION}/qe-${QE_VERSION}-ReleasePack.tgz
 QE_DIR=qe-${QE_VERSION}
 
+if [[ ${QE_VERSION} = None ]]; then
+   exit 0
+fi
+
 # Create tempdir
 tmpdir=$(mktemp -d)
 pushd $tmpdir
