@@ -88,13 +88,6 @@ if [[ -n ${CMD2} ]]; then
 fi
 set -u
 
-# local file settings
-if [[ ! -f ${HOMEDIR}/qerun.sh ]]; then
-   cp ${CYCLECLOUD_SPEC_PATH}/files/qerun.sh ${HOMEDIR}/
-   chmod a+rx ${HOMEDIR}/qerun.sh
-   chown ${CUSER}:${CUSER} ${HOMEDIR}/qerun.sh
-fi
-
 # file settings
 chown -R ${CUSER}:${CUSER} ${HOMEDIR}/apps 
 cp /opt/cycle/jetpack/logs/cluster-init/QuantumESPRESSO/execute/scripts/30.execute-${SW}.sh.out ${HOMEDIR}/
