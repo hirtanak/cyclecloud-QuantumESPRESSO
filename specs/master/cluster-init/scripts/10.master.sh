@@ -46,7 +46,7 @@ yum install -y htop
 
 # file settings
 chown -R ${CUSER}:${CUSER} ${HOMEDIR}/apps 
-cp /opt/cycle/jetpack/logs/cluster-init/QuntumESPRESSO/master/scripts/10.master.sh.out ${HOMEDIR}/ 
+cp /opt/cycle/jetpack/logs/cluster-init/QuantumESPRESSO/master/scripts/10.master.sh.out ${HOMEDIR}/ 
 chown ${CUSER}:${CUSER} ${HOMEDIR}/10.master.sh.out
 
 #clean up
