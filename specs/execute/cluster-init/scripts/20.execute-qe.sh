@@ -50,13 +50,6 @@ chown ${CUSER}:${CUSER} /mnt/exports/apps | exit 0
 yum install -y perl-Digest-MD5.x86_64 redhat-lsb-core centos-release-scl
 yum install -y devtoolset-8-gcc devtoolset-8-gcc-c++ devtoolset-8-gcc-gfortran
 
-# License File Setting
-#LICENSE=$(jetpack config LICENSE)
-#KEY=$(jetpack config KEY)
-#(echo "export LICENSE_FILE=${LICENSE}"; echo "export KEY=${KEY}") > /etc/profile.d/qe.sh
-#chmod a+x /etc/profile.d/qe.sh
-#chown ${CUSER}:${CUSER} /etc/profile.d/qe.sh
-
 # Don't run if we've already expanded the QuantumESPRESSO tarball. Download QuantumESPRESSO installer into tempdir and unpack it into the apps directory
 if [[ ! -f ${HOMEDIR}/apps/${QE_DIR} ]]; then
    wget -nv ${QE_DL_URL} -O ${HOMEDIR}/apps/qe-${QE_VERSION}-ReleasePack.tgz
@@ -90,13 +83,6 @@ if [[ -n ${CMD2} ]]; then
 fi
 set -u
 
-# local file settings
-if [[ ! -f ${HOMEDIR}/qerun.sh ]]; then
-   cp ${CYCLECLOUD_SPEC_PATH}/files/qerun.sh ${HOMEDIR}/
-   chmod a+rx ${HOMEDIR}/qerun.sh
-   chown ${CUSER}:${CUSER} ${HOMEDIR}/qerun.sh
-fi
-
 # file settings
 chown -R ${CUSER}:${CUSER} ${HOMEDIR}/apps 
 cp /opt/cycle/jetpack/logs/cluster-init/QuantumESPRESSO/execute/scripts/20.execute-${SW}.sh.out ${HOMEDIR}/
@@ -105,5 +91,6 @@ chown ${CUSER}:${CUSER} ${HOMEDIR}/20.execute-${SW}.sh.out
 #clean up
 popd
 rm -rf $tmpdir
+
 
 echo "end of 20.execute-${SW}.sh"
