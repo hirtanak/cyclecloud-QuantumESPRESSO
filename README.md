@@ -16,7 +16,7 @@
 1. run "cyclecloud project upload azure-storage" for uploading template to CycleCloud
 1. "cyclecloud import_template -f templates/pbs_extended_nfs_quantumespresso.txt" for register this template to your CycleCloud
 
-## How to run Siemens QuantumESPRESSO
+## How to run QuantumESPRESSO
 
 1. Create Execute Node manually
 1. Check Node IP Address
