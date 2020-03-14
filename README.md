@@ -2,7 +2,6 @@
 
 ## Prerequisites
 
-1. Prepaire for your QuantumESPRESSO bilnary.
 1. Install CycleCloud CLI
 
 ## Application
@@ -18,9 +17,7 @@
 
 ## How to run QuantumESPRESSO
 
-1. Create Execute Node manually
-1. Check Node IP Address
-1. Create hosts file for your nodes
+1. Create PBS script
 1. qsub ~/qerub.sh
 
 ## Known Issues
